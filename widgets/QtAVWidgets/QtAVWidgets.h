@@ -27,7 +27,9 @@
 #include <QtAVWidgets/GraphicsItemRenderer.h>
 #include <QtAVWidgets/WidgetRenderer.h>
 //#include <QtAVWidgets/GLWidgetRenderer.h>
+#ifndef SYLIXOS
 #include <QtAVWidgets/GLWidgetRenderer2.h>
+#endif
 #include <QtAVWidgets/VideoPreviewWidget.h>
 
 #endif // QTAVWIDGETS_H

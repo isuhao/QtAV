@@ -44,8 +44,10 @@
 #include <QtAV/FilterContext.h>
 #include <QtAV/LibAVFilter.h>
 
+#ifndef SYLIXOS
 #include <QtAV/VideoShader.h>
 #include <QtAV/OpenGLVideo.h>
+#endif
 
 #include <QtAV/VideoCapture.h>
 #include <QtAV/VideoDecoder.h>

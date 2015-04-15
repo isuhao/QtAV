@@ -108,6 +108,14 @@ defineTest(qtCompileTest) {
     # Disable qmake features which are typically counterproductive for tests
     qmake_configs = "\"CONFIG -= qt debug_and_release app_bundle lib_bundle\""
 
+    # Add for the SylixOS RTOS.
+    qmake_configs += "\"LIBS += -LD:/workspace_bsp/base_a8/libcextern/Release\""
+    qmake_configs += "\"LIBS += -LD:/workspace_bsp/base_a8/libsylixos/Release\""
+    qmake_configs += "\"LIBS += -LD:/workspace_bsp/base_a8/libcextern/Debug\""
+    qmake_configs += "\"LIBS += -LD:/workspace_bsp/base_a8/libsylixos/Debug\""
+    qmake_configs += "\"LIBS += -LD:/workspace_lib/libffmpeg/lib\""
+    qmake_configs += "\"INCLUDEPATH += D:/workspace_lib/libffmpeg\""
+
     # Clean up after previous run
     exists($$test_out_dir/Makefile):qtRunLoggedCommand("$$test_cmd_base $$QMAKE_MAKE distclean")
 
