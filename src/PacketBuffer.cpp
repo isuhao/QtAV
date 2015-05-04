@@ -94,11 +94,7 @@ bool PacketBuffer::isBuffering() const
 qreal PacketBuffer::bufferProgress() const
 {
     const qreal p = qreal(buffered())/qreal(bufferValue());
-#ifndef SYLIXOS
-    return qMax(qMin(p, 1.0), 0.0);
-#else
-    return qMax(qMin(p, qreal(1.0)), qreal(0.0));
-#endif
+    return qMax<qreal>(qMin<qreal>(p, 1.0), 0.0);
 }
 
 bool PacketBuffer::checkEnough() const
